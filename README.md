@@ -13,7 +13,7 @@ Jalankan npm run dev
 
 Jalankan json-server --watch db.json
 
-1. Login terlebih dahulu sebelum memasuki menu
+1. Login terlebih dahulu sebelum memasuki menu, data untuk login ada pada db.json
    ![image](https://github.com/zumarnf/toko_pulsa/assets/110282332/d4cc3e7e-5c69-435a-a0d7-911c15bfbf85)
 2. Lalu masuk kedalam menu, terdapat saldo customer
    ![image](https://github.com/zumarnf/toko_pulsa/assets/110282332/370d5524-b06e-47bf-803e-24f11466dab7)

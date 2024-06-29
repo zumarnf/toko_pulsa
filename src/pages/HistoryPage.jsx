@@ -1,16 +1,16 @@
 import React from "react";
-import { Layout, Menu, theme } from "antd";
-import CardMenu from "../components/CardMenu";
+import { Breadcrumb, Layout, Menu, theme } from "antd";
+import CardHistory from "../components/CardHistory";
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
-function MenuIndex() {
+function HistoryPage() {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   return (
-    <Layout style={{ maxHeight: "100vh", display:"block", overflow:"auto" }}>
+    <Layout style={{ minHeight: "100vh", display:"block", overflow:"auto" }}>
       <Header
         style={{
           position: "sticky",
@@ -43,28 +43,35 @@ function MenuIndex() {
           </Menu.Item>
         </Menu>
       </Header>
-      <Content style={{ padding: "0 48px", marginBottom: "40px" }}>
+      <Content
+        style={{
+          padding: "0 48px",
+        }}
+      >
         <div
           style={{
-            padding: "24px",
+            padding: 24,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
-            marginBottom: "40px",
+            marginTop: "40px",
           }}
         >
-          <div style={{ marginBottom: "24px" }}>
-            <h2>Pulsa</h2>
-            <CardMenu />
+          <div>
+            <h2>Riwayat Pembelian</h2>
+            <CardHistory />
           </div>
-          <hr />
-          <div style={{ marginBottom: "24px" }}>
-            <h2>Paket Data</h2>
-            <CardMenu />
-          </div>
+          
         </div>
       </Content>
+      <Footer
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Ant Design ©{new Date().getFullYear()} Created by Ant UED
+      </Footer>
     </Layout>
   );
 }
 
-export default MenuIndex;
+export default HistoryPage;

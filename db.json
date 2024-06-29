@@ -1,0 +1,42 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "password123",
+      "name": "Ramz",
+      "saldo": 1000000
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "password456",
+      "name": "Zumy",
+      "saldo": 1000000
+    }
+  ],
+  "produk": [
+    {
+      "id": "1",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "2",
+      "kriteria": "pulsa",
+      "namaproduk": "50.000",
+      "price": 20000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+        "id": "3",
+        "kriteria": "pulsa",
+        "namaproduk": "50.000",
+        "price": 20000,
+        "deskripsi": "30 hari masa aktif"
+      }
+  ],
+  "transactions": []
+}

@@ -1,23 +1,44 @@
-import React from "react";
-import { Card, Form, Input, Button, Checkbox } from "antd";
+import React, { useContext } from 'react';
+import { Card, Form, Input, Button, Typography, message } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { fetchCustomers } from '../api.js';
+import { UserContext } from '../UserContext.jsx';
+
+const { Title } = Typography;
 
 function LoginMenu() {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+
+  const onFinish = async (values) => {
+    const customers = await fetchCustomers();
+    const customer = customers.find(
+      (customer) =>
+        customer.username === values.username && customer.password === values.password
+    );
+
+    if (customer) {
+      setUser(customer);
+      message.success('Login successful!');
+      navigate('/menu'); // Redirect to MenuIndex
+    } else {
+      message.error('Invalid username or password');
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log('Failed:', errorInfo);
   };
 
   return (
     <Card
-      title="Login"
+      title={<Title level={3} style={{ margin: 0 }}>Login</Title>}
       bordered={false}
       style={{
         width: 300,
-        margin: "0 auto",
-        marginTop: "50px",
+        margin: '0 auto',
+        marginTop: '50px',
+        textAlign: 'center',
       }}
     >
       <Form
@@ -27,9 +48,6 @@ function LoginMenu() {
         }}
         wrapperCol={{
           span: 16,
-        }}
-        initialValues={{
-          remember: true,
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -41,7 +59,7 @@ function LoginMenu() {
           rules={[
             {
               required: true,
-              message: "Please input your username!",
+              message: 'Please input your username!',
             },
           ]}
         >
@@ -54,7 +72,7 @@ function LoginMenu() {
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: 'Please input your password!',
             },
           ]}
         >
@@ -62,23 +80,12 @@ function LoginMenu() {
         </Form.Item>
 
         <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{
-            offset: 0,
-            span: 13,
-          }}
-          labelCol={{
-            span: 10,
-          }}
-        >
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        <Form.Item
           wrapperCol={{
             offset: 8,
             span: 8,
+          }}
+          style={{
+            marginTop: 50,
           }}
         >
           <Button type="primary" htmlType="submit">

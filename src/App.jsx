@@ -1,10 +1,10 @@
 import React from 'react';
-import LoginPage from './pages/LoginPage';
-import './App.css';
+import MenuIndex from './pages/MenuIndex';
+
 
 function App() {
   return (
-    <LoginPage />
+    <MenuIndex />
   );
 }
 

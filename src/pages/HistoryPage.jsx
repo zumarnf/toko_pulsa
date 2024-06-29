@@ -1,6 +1,7 @@
 import React from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Layout, theme } from "antd";
 import CardHistory from "../components/CardHistory";
+import HeaderMenu from "../layouts/HeaderMenu.jsx";
 
 const { Header, Content, Footer } = Layout;
 
@@ -10,7 +11,7 @@ function HistoryPage() {
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: "100vh", display:"block", overflow:"auto" }}>
+    <Layout style={{ minHeight: "100vh", display: "block", overflow: "auto" }}>
       <Header
         style={{
           position: "sticky",
@@ -19,29 +20,9 @@ function HistoryPage() {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
         }}
       >
-        <div className="demo-logo" style={{ color: "#fff" }}>
-          Logo
-        </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          style={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ display: "flex" }}>
-            <Menu.Item key="1">Menu</Menu.Item>
-            <Menu.Item key="2">Daftar Transaksi</Menu.Item>
-          </div>
-          <Menu.Item key="3" style={{ marginLeft: "auto" }}>
-            Login
-          </Menu.Item>
-        </Menu>
+        <HeaderMenu />
       </Header>
       <Content
         style={{
@@ -60,7 +41,6 @@ function HistoryPage() {
             <h2>Riwayat Pembelian</h2>
             <CardHistory />
           </div>
-          
         </div>
       </Content>
       <Footer

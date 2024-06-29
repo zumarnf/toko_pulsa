@@ -5,14 +5,14 @@
       "username": "admin",
       "password": "password123",
       "name": "Ramz",
-      "saldo": 1000000
+      "saldo": 730000
     },
     {
       "id": "2",
       "username": "user",
       "password": "password456",
       "name": "Zumy",
-      "saldo": 1000000
+      "saldo": 880000
     }
   ],
   "produk": [
@@ -31,12 +31,53 @@
       "deskripsi": "30 hari masa aktif"
     },
     {
-        "id": "3",
-        "kriteria": "pulsa",
-        "namaproduk": "50.000",
-        "price": 20000,
-        "deskripsi": "30 hari masa aktif"
-      }
+      "id": "3",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": "e8eb",
+      "userId": "2",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "cf26",
+      "userId": "2",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "d36f",
+      "userId": "1",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "f2ac",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "6559",
+      "userId": "1",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    }
+  ]
 }

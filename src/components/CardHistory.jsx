@@ -19,6 +19,9 @@ const data = [
   {
     title: "Title 6",
   },
+  {
+    title: "Title 7",
+  },
 ];
 function CardHistory() {
   return (

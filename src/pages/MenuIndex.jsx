@@ -1,8 +1,9 @@
 import React from "react";
-import { Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme, Typography } from "antd";
 import CardMenu from "../components/CardMenu";
 
 const { Header, Content } = Layout;
+const { Title } = Typography;
 
 function MenuIndex() {
   const {
@@ -43,7 +44,8 @@ function MenuIndex() {
           </Menu.Item>
         </Menu>
       </Header>
-      <Content style={{ padding: "0 48px", marginBottom: "40px" }}>
+      <Content style={{ padding: "0 48px", marginBottom: "40px", marginTop: "30px" }}>
+      <Title level={3} style={{ marginBottom: "20px" }}>Pilih Mau Pulsa Atau Paket Data?</Title>
         <div
           style={{
             padding: "24px",

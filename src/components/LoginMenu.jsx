@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { Card, Form, Input, Button, Typography, message } from 'antd';
-import { useNavigate } from 'react-router-dom';
-import { fetchCustomers } from '../api.js';
-import { UserContext } from '../UserContext.jsx';
+import React, { useContext } from "react";
+import { Card, Form, Input, Button, Typography, message } from "antd";
+import { useNavigate } from "react-router-dom";
+import { fetchCustomers } from "../api.js";
+import { UserContext } from "../UserContext.jsx";
 
 const { Title } = Typography;
 
@@ -14,31 +14,37 @@ function LoginMenu() {
     const customers = await fetchCustomers();
     const customer = customers.find(
       (customer) =>
-        customer.username === values.username && customer.password === values.password
+        customer.username === values.username &&
+        customer.password === values.password
     );
 
     if (customer) {
       setUser(customer);
-      message.success('Login successful!');
-      navigate('/menu'); // Redirect to MenuIndex
+      localStorage.setItem("user", JSON.stringify(customer));
+      message.success("Login successful!");
+      navigate("/menu");
     } else {
-      message.error('Invalid username or password');
+      message.error("Invalid username or password");
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
   return (
     <Card
-      title={<Title level={3} style={{ margin: 0 }}>Login</Title>}
+      title={
+        <Title level={3} style={{ margin: 0 }}>
+          Login
+        </Title>
+      }
       bordered={false}
       style={{
         width: 300,
-        margin: '0 auto',
-        marginTop: '50px',
-        textAlign: 'center',
+        margin: "0 auto",
+        marginTop: "50px",
+        textAlign: "center",
       }}
     >
       <Form
@@ -59,7 +65,7 @@ function LoginMenu() {
           rules={[
             {
               required: true,
-              message: 'Please input your username!',
+              message: "Please input your username!",
             },
           ]}
         >
@@ -72,7 +78,7 @@ function LoginMenu() {
           rules={[
             {
               required: true,
-              message: 'Please input your password!',
+              message: "Please input your password!",
             },
           ]}
         >

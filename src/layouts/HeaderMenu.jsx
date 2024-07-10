@@ -1,16 +1,28 @@
 import React, { useContext } from "react";
-import { Menu, Button } from "antd";
+import { Menu, Button, Dropdown, message, Modal } from "antd";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from "../UserContext.jsx";
 import { Header } from "antd/es/layout/layout.js";
 
 const HeaderMenu = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleMenuClick = ({ key }) => {
     navigate(key);
+  };
+
+  const handleLogout = () => {
+    Modal.confirm({
+      title: "Logout",
+      content: "Are you sure you want to logout?",
+      onOk: () => {
+        setUser(null);
+        message.success("Successfully logged out");
+        navigate("/");
+      },
+    });
   };
 
   const items = [
@@ -24,10 +36,23 @@ const HeaderMenu = () => {
     },
     {
       key: "login",
-      label: user?.name ? user.name : <Link to="/">Login</Link>,
+      label: user?.name ? (
+        <Dropdown
+          overlay={
+            <Menu>
+              <Menu.Item key="logout" onClick={handleLogout}>
+                Logout
+              </Menu.Item>
+            </Menu>
+          }
+        >
+          <span>{user.name}</span>
+        </Dropdown>
+      ) : (
+        <Link to="/">Login</Link>
+      ),
     },
   ];
-  console.log(user);
 
   return (
     <Header

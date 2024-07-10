@@ -5,14 +5,14 @@
       "username": "admin",
       "password": "password123",
       "name": "Ramz",
-      "saldo": 730000
+      "saldo": 540000
     },
     {
       "id": "2",
       "username": "user",
       "password": "password456",
       "name": "Zumy",
-      "saldo": 880000
+      "saldo": 800000
     }
   ],
   "produk": [
@@ -77,6 +77,86 @@
       "kriteria": "internet",
       "namaproduk": "50 GB",
       "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "9343",
+      "userId": "1",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "bac7",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "768b",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "9cf6",
+      "userId": "2",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "f27b",
+      "userId": "2",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "5e2f",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "dd00",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "100.000",
+      "price": 40000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "7424",
+      "userId": "1",
+      "kriteria": "pulsa",
+      "namaproduk": "50.000",
+      "price": 20000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "e397",
+      "userId": "2",
+      "kriteria": "internet",
+      "namaproduk": "50 GB",
+      "price": 10000,
+      "deskripsi": "30 hari masa aktif"
+    },
+    {
+      "id": "0820",
+      "userId": "2",
+      "kriteria": "pulsa",
+      "namaproduk": "50.000",
+      "price": 20000,
       "deskripsi": "30 hari masa aktif"
     }
   ]
